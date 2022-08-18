@@ -17,7 +17,7 @@ balooctl suspend
 balooctl disable  
 
 # Firefox micro stuttering videos
-(Don't know what specific tweak solved this issue, so I write all tweaks done)
+(Don't know what specific tweak solved this issue, so I write all tweaks done)  
 about:config in Firefox  
 gfx.webrender.all=true  
 layers.acceleration.force-enabled=true  

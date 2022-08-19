@@ -2,7 +2,7 @@
 Just a compilation of various tweaks for my Alienware Aurora Ryzen Edition
 
 # Mount second disk as a folder for Steam games
-cd / && sudo makdir GAMES  
+cd / && sudo mkdir GAMES  
 sudo vi /etc/fstab  
 /dev/sdx* /GAMES ext4 defaults,nofail 0 0  
 
@@ -22,4 +22,4 @@ balooctl disable
 about:config in Firefox  
 gfx.webrender.all=true  
 layers.acceleration.force-enabled=true  
-sudo pacman -S ffmpeg && openh264  
+sudo pacman -S ffmpeg openh264  

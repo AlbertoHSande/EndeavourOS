@@ -23,3 +23,8 @@ about:config in Firefox
 gfx.webrender.all=true  
 layers.acceleration.force-enabled=true  
 sudo pacman -S ffmpeg openh264  
+
+# Bluetooth don't working under Gnome  
+This is simple. Check if the service is enabled.  
+systemctl status bluetooth  
+systemctl start bluetooth  

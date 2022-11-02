@@ -64,6 +64,11 @@ So if you do an update with sudo pacman -Syyu, it will print:
 echo 'export PATH=/home/alberto/.local/bin:$PATH' >> .bashrc
 ``` 
 
-# Backup to AWS S3 Glacier
-Guide: https://github.com/m-radzikowski/aws-s3-personal-backup
-AWS CLI guide: https://docs.aws.amazon.com/cli/v1/userguide/install-linux.html
+# Backup to AWS S3 Glacier  
+Guide: https://github.com/m-radzikowski/aws-s3-personal-backup  
+AWS CLI guide: https://docs.aws.amazon.com/cli/v1/userguide/install-linux.html  
+
+# Force Wayland in GNOME
+``` 
+sudo ln -s /dev/null /etc/udev/rules.d/61-gdm.rules
+``` 

@@ -1,15 +1,21 @@
-# EndeavourOS
-Just a compilation of various tweaks for my Alienware Aurora Ryzen Edition
+# Linux Notes
+Just a compilation of various Linux tweaks for my Alienware Aurora Ryzen Edition
 
 # Mount second disk as a folder for Steam games
+~~cd / && sudo mkdir GAMES~~  
+~~sudo vi /etc/fstab~~  
+~~/dev/sdx* /GAMES ext4 defaults,nofail 0 0~~
+  
+This is bad practice. It is better to mount partitions by UUID.
 ```
-cd / && sudo mkdir GAMES  
-sudo vi /etc/fstab  
-/dev/sdx* /GAMES ext4 defaults,nofail 0 0
+cd / && sudo mkdir /home/$USER/Games
+sudo blkid -- In order to get the UUID
+sudo vi /etc/fstab
+UUID=5e6abfd6-cbc2-45e2-abb1-75b9e241a2b1  /home/$USER/Games                  ext4   defaults,nofail               0  0
 ```
 
 # Add support for Xbox Series Controller
-(It appears that you have to install for every kernel update)  
+(It appears that you have to uninstall and reinstall for every kernel update)  
 ```
 git clone https://github.com/atar-axis/xpadneo.git  
 cd xpadneo  
@@ -23,13 +29,14 @@ balooctl disable
 ```
 
 # Firefox micro stuttering videos (KDE)
-(Don't know what specific tweak solved this issue, so I write all tweaks done)  
+It seems that this is no longer needed.  
+~~(Don't know what specific tweak solved this issue, so I write all tweaks done)  
 about:config in Firefox  
 gfx.webrender.all=true  
-layers.acceleration.force-enabled=true  
-```
-sudo pacman -S ffmpeg openh264  
-```
+layers.acceleration.force-enabled=true~~  
+  
+~~sudo pacman -S ffmpeg openh264~~  
+
 
 # Bluetooth isn't working under Gnome  
 This is simple. Check if the service is enabled.  
@@ -61,7 +68,7 @@ So if you do an update with sudo pacman -Syyu, it will print:
 
 # Add folder to PATH
 ``` 
-echo 'export PATH=/home/alberto/.local/bin:$PATH' >> .bashrc
+echo 'export PATH=/home/$USER/.local/bin:$PATH' >> .bashrc
 ``` 
 
 # Backup to AWS S3 Glacier  
